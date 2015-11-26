@@ -99,7 +99,8 @@ int main(int argc, const char *argv[])
         fprintf(stderr, "Usage: Galaxies [num_particles]\n");
         return EXIT_FAILURE;
     } else if (argc == 2) {
-      SetParticleCount(strtol(argv[1], NULL, 10));
+		if(!strstr(argv[1], "-psn_"))
+            SetParticleCount(strtol(argv[1], NULL, 10));
     }
 
     NSOpenGLPixelFormat *pixelFormat =
